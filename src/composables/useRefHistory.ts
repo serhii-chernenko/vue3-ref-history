@@ -55,7 +55,7 @@ export const useRefHistory: RefHistoryFn = (theme, capacity) => {
             allowRedo.value = true
         },
         redo: () => {
-            const last = history.value.at(-1)
+            const last = history.value[history.value.length - 1]
 
             if (!last || !allowRedo.value) {
                 return
