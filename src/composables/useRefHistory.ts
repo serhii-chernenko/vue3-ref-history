@@ -62,7 +62,9 @@ export const useRefHistory: RefHistoryFn = (theme, capacity) => {
             }
 
             result.value.push(last)
-            allowRedo.value = history.value.length > result.value.length
+            allowRedo.value =
+                Math.min(history.value.length, capacity.value) >
+                result.value.length
         },
         history: result,
     }
